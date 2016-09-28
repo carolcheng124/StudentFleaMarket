@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="login" class="org.database.Action.LoginAction" method="execute">
+			<result name="success">/Main.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		
+		<action name="register" class="org.database.Action.RegisterAction" method="execute">
+			<result name="success">/success.jsp</result>
+			<result name="login">/Registration.jsp</result>
+			<result name="input">/Registration.jsp</result>
+		</action>
+	</package>
+	
+	<package name="product" namespace="/" extends="struts-default">
+		<action name="showproduct" class="org.database.Action.ShowProductAction" method="execute">
+			<result name="success">/test.jsp</result>
+		</action>
+		
+		<action name="showproductbycategory" class="org.database.Action.ShowProductAction" method="searchByCatagory">
+			<result name="success">/showprouctbycategory.jsp</result>
+		</action>
+		
+		<action name="showproductbyname" class="org.database.Action.ShowProductAction" method="searchByName">
+			<result name="success">/test.jsp</result>
+		</action>
+		
+		<action name="postproductaction" class="org.database.Action.PostproductAction" method="execute">
+			<result name="success">/success.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		
+		<action name="checkout" class="org.database.Action.CheckoutAction" method="execute">
+			<result name="success">/shoppingcart.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		
+		<action name="checkoutsuccess" class="org.database.Action.CheckoutAction" method="CheckoutSuccess">
+			<result name="success">/shoppingcart.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+	</package>
+</struts>    
